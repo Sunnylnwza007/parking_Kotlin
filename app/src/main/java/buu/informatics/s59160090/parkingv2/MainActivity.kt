@@ -1,5 +1,6 @@
 package buu.informatics.s59160090.parkingv2
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -53,7 +54,11 @@ class MainActivity : AppCompatActivity() {
                 myPark1.owner = editText2.text.toString()
                 myPark1.tel = editText3.text.toString()
                 myPark = myPark1
-                buttonPark1.setText("ไม่ว่าง")
+                if (!editText1.text.toString().equals("")){
+                    buttonPark1.setText("ไม่ว่าง")
+                    buttonPark1.setBackgroundColor(Color.parseColor("#a9251d"))
+
+                }
                 invalidateAll()
 
             }else if (park==2){
@@ -61,14 +66,20 @@ class MainActivity : AppCompatActivity() {
                 myPark2.owner = editText2.text.toString()
                 myPark2.tel = editText3.text.toString()
                 myPark = myPark2
-                buttonPark2.setText("ไม่ว่าง")
+                if (!editText1.text.toString().equals("")){
+                    buttonPark2.setText("ไม่ว่าง")
+                    buttonPark2.setBackgroundColor(Color.parseColor("#a9251d"))
+                }
                 invalidateAll()
             }else{
                 myPark3.no = editText1.text.toString()
                 myPark3.owner = editText2.text.toString()
                 myPark3.tel = editText3.text.toString()
                 myPark = myPark3
-                buttonPark3.setText("ไม่ว่าง")
+                if (!editText1.text.toString().equals("")){
+                    buttonPark3.setText("ไม่ว่าง")
+                    buttonPark3.setBackgroundColor(Color.parseColor("#a9251d"))
+                }
                 invalidateAll()
             }
         }
@@ -82,6 +93,7 @@ class MainActivity : AppCompatActivity() {
                 myPark1.tel = ""
                 myPark = myPark1
                 buttonPark1.setText("ว่าง")
+                buttonPark1.setBackgroundColor(Color.parseColor("#ff99cc00"))
                 invalidateAll()
 
             }else if (park==2){
@@ -90,6 +102,7 @@ class MainActivity : AppCompatActivity() {
                 myPark2.tel = ""
                 myPark = myPark2
                 buttonPark2.setText("ว่าง")
+                buttonPark2.setBackgroundColor(Color.parseColor("#ff99cc00"))
                 invalidateAll()
             }else{
                 myPark3.no = ""
@@ -97,6 +110,7 @@ class MainActivity : AppCompatActivity() {
                 myPark3.tel = ""
                 myPark = myPark3
                 buttonPark3.setText("ว่าง")
+                buttonPark3.setBackgroundColor(Color.parseColor("#ff99cc00"))
                 invalidateAll()
             }
         }
