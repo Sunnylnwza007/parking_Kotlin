@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                     buttonPark1.setBackgroundColor(Color.parseColor("#a9251d"))
 
                 }
-                invalidateAll()
+
 
             }else if (park==2){
                 myPark2.no = editText1.text.toString()
@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
                     buttonPark2.setText("ไม่ว่าง")
                     buttonPark2.setBackgroundColor(Color.parseColor("#a9251d"))
                 }
-                invalidateAll()
+
             }else{
                 myPark3.no = editText1.text.toString()
                 myPark3.owner = editText2.text.toString()
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                     buttonPark3.setText("ไม่ว่าง")
                     buttonPark3.setBackgroundColor(Color.parseColor("#a9251d"))
                 }
-                invalidateAll()
+
             }
         }
     }
@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
                 myPark = myPark1
                 buttonPark1.setText("ว่าง")
                 buttonPark1.setBackgroundColor(Color.parseColor("#ff99cc00"))
-                invalidateAll()
+
 
             }else if (park==2){
                 myPark2.no = ""
@@ -103,7 +103,7 @@ class MainActivity : AppCompatActivity() {
                 myPark = myPark2
                 buttonPark2.setText("ว่าง")
                 buttonPark2.setBackgroundColor(Color.parseColor("#ff99cc00"))
-                invalidateAll()
+
             }else{
                 myPark3.no = ""
                 myPark3.owner = ""
@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity() {
                 myPark = myPark3
                 buttonPark3.setText("ว่าง")
                 buttonPark3.setBackgroundColor(Color.parseColor("#ff99cc00"))
-                invalidateAll()
+
             }
         }
     }
