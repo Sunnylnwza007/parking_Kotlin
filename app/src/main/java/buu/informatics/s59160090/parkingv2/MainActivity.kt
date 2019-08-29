@@ -25,28 +25,32 @@ class MainActivity : AppCompatActivity() {
             binding.myPark = myPark1
             park = 1
             show()
+            setColor()
         }
 
         binding.buttonPark2.setOnClickListener {
             binding.myPark = myPark2
             park = 2
             show()
+            setColor()
         }
 
         binding.buttonPark3.setOnClickListener {
             binding.myPark = myPark3
             park = 3
             show()
+            setColor()
         }
         binding.buttonUpdate.setOnClickListener{
             update(it)
+            setColor()
         }
 
         binding.buttonDel.setOnClickListener {
             del(it)
+            setColor()
         }
     }
-
     private fun update(view: View){
         binding.apply {
             if (park==1){
@@ -56,11 +60,7 @@ class MainActivity : AppCompatActivity() {
                 myPark = myPark1
                 if (!editText1.text.toString().equals("")){
                     buttonPark1.setText("ไม่ว่าง")
-                    buttonPark1.setBackgroundColor(Color.parseColor("#a9251d"))
-
                 }
-
-
             }else if (park==2){
                 myPark2.no = editText1.text.toString()
                 myPark2.owner = editText2.text.toString()
@@ -68,8 +68,8 @@ class MainActivity : AppCompatActivity() {
                 myPark = myPark2
                 if (!editText1.text.toString().equals("")){
                     buttonPark2.setText("ไม่ว่าง")
-                    buttonPark2.setBackgroundColor(Color.parseColor("#a9251d"))
                 }
+
 
             }else{
                 myPark3.no = editText1.text.toString()
@@ -78,7 +78,6 @@ class MainActivity : AppCompatActivity() {
                 myPark = myPark3
                 if (!editText1.text.toString().equals("")){
                     buttonPark3.setText("ไม่ว่าง")
-                    buttonPark3.setBackgroundColor(Color.parseColor("#a9251d"))
                 }
 
             }
@@ -93,25 +92,18 @@ class MainActivity : AppCompatActivity() {
                 myPark1.tel = ""
                 myPark = myPark1
                 buttonPark1.setText("ว่าง")
-                buttonPark1.setBackgroundColor(Color.parseColor("#ff99cc00"))
-
-
             }else if (park==2){
                 myPark2.no = ""
                 myPark2.owner = ""
                 myPark2.tel = ""
                 myPark = myPark2
                 buttonPark2.setText("ว่าง")
-                buttonPark2.setBackgroundColor(Color.parseColor("#ff99cc00"))
-
             }else{
                 myPark3.no = ""
                 myPark3.owner = ""
                 myPark3.tel = ""
                 myPark = myPark3
                 buttonPark3.setText("ว่าง")
-                buttonPark3.setBackgroundColor(Color.parseColor("#ff99cc00"))
-
             }
         }
     }
@@ -142,8 +134,34 @@ class MainActivity : AppCompatActivity() {
             buttonDel.visibility = View.VISIBLE
         }
     }
+    private fun setColor(){
+        binding.apply {
+            if (myPark1.no.equals("")){
+                buttonPark1.setBackgroundColor(Color.parseColor("#ff99cc00"))
+            }else{
+                buttonPark1.setBackgroundColor(Color.parseColor("#a9251d"))
+            }
 
+            if (myPark2.no.equals("")){
+                buttonPark2.setBackgroundColor(Color.parseColor("#ff99cc00"))
+            }else {
 
+                buttonPark2.setBackgroundColor(Color.parseColor("#a9251d"))
+            }
+            if (myPark3.no.equals("")){
+                buttonPark3.setBackgroundColor(Color.parseColor("#ff99cc00"))
+            }else{
 
+                buttonPark3.setBackgroundColor(Color.parseColor("#a9251d"))
+            }
 
+            if (park ==1 ){
+                buttonPark1.setBackgroundColor(Color.parseColor("#673fff"))
+            }else if (park == 2){
+                buttonPark2.setBackgroundColor(Color.parseColor("#673fff"))
+            }else{
+                buttonPark3.setBackgroundColor(Color.parseColor("#673fff"))
+            }
+        }
+    }
 }
